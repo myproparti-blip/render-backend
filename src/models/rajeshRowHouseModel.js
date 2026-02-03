@@ -10,6 +10,11 @@ const photoSchema = new mongoose.Schema({
     siteImages: [String]
 }, { _id: false });
 
+const customAreaSchema = new mongoose.Schema({
+    areaName: { type: String, required: true },
+    customName: { type: String, default: "" }
+}, { _id: false });
+
 const pdfDetailsSchema = new mongoose.Schema({
     // GENERAL TAB FIELDS
     numberingFlatBungalowPlotNo: { type: String, default: "" },
@@ -189,9 +194,10 @@ const rajeshRowHouseSchema = new mongoose.Schema({
     propertyImages: [mongoose.Schema.Types.Mixed],
     locationImages: [mongoose.Schema.Types.Mixed],
      bankImage: { type: mongoose.Schema.Types.Mixed, default: null },
-    documentPreviews: [mongoose.Schema.Types.Mixed],
-    areaImages: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
-    photos: { type: photoSchema, default: () => ({}) },
+     documentPreviews: [mongoose.Schema.Types.Mixed],
+     areaImages: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
+     customAreas: [{ type: customAreaSchema, default: () => ({}) }],
+     photos: { type: photoSchema, default: () => ({}) },
     bankImage: {
         url: { type: String, default: "" },
         fileName: { type: String, default: "" },

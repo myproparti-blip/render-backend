@@ -25,6 +25,11 @@ const locationDetailsSchema = new mongoose.Schema(
     { _id: false }
 );
 
+const customAreaSchema = new mongoose.Schema({
+    areaName: { type: String, required: true },
+    customName: { type: String, default: "" }
+}, { _id: false });
+
 const boundariesSchema = new mongoose.Schema(
     {
         east: { saleDeed: { type: String, default: "" }, siteVisit: { type: String, default: "" } },
@@ -344,6 +349,7 @@ const rajeshFlatSchema = new mongoose.Schema(
         locationImages: [mongoose.Schema.Types.Mixed],
         documentPreviews: [mongoose.Schema.Types.Mixed],
         areaImages: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
+        customAreas: [{ type: customAreaSchema, default: () => ({}) }],
         photos: { type: photoSchema, default: () => ({}) },
         bankImage: {
             url: { type: String, default: "" },

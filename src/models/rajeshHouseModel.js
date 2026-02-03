@@ -376,6 +376,11 @@ const checklistOfDocumentsSchema = new mongoose.Schema({
     brokerRecording: { type: String, default: "" },
     pastValuationRate: { type: String, default: "" }
 }, { _id: false });
+const customAreaSchema = new mongoose.Schema({
+    areaName: { type: String, required: true },
+    customName: { type: String, default: "" }
+}, { _id: false });
+
 const customFieldSchema = new mongoose.Schema({
     name: { type: String, required: true },
     value: { type: String, required: true }
@@ -431,6 +436,7 @@ const rajeshHouseSchema = new mongoose.Schema({
     locationImages: [mongoose.Schema.Types.Mixed],
     documentPreviews: [mongoose.Schema.Types.Mixed],
     areaImages: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
+    customAreas: [{ type: customAreaSchema, default: () => ({}) }],
     photos: { type: photoSchema, default: () => ({}) },
     bankImage: {
         url: { type: String, default: "" },
