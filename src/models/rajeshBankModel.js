@@ -10,6 +10,10 @@ const photoSchema = new mongoose.Schema({
     siteImages: [String]
 }, { _id: false });
 
+const customAreaSchema = new mongoose.Schema({
+    areaName: { type: String, required: true },
+    customName: { type: String, default: "" }
+}, { _id: false });
 
 const checklistSchema = new mongoose.Schema({
     // Engagement Letter / Confirmation for Assignment
@@ -399,6 +403,7 @@ const rajeshBankSchema = new mongoose.Schema({
     bankImage: { type: mongoose.Schema.Types.Mixed, default: null },
     documentPreviews: [mongoose.Schema.Types.Mixed],
     areaImages: { type: mongoose.Schema.Types.Mixed, default: () => ({}) },
+    customAreas: [{ type: customAreaSchema, default: () => ({}) }],
     photos: { type: photoSchema, default: () => ({}) },
     status: {
         type: String,
