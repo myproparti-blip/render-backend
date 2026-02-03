@@ -54,53 +54,6 @@ const extentOfSiteSchema = new mongoose.Schema(
     },
     { _id: false }
 );
-
-const apartmentLocationSchema = new mongoose.Schema(
-    {
-        tsNo: { type: String, default: "" },
-        blockNo: { type: String, default: "" },
-        wardNo: { type: String, default: "" },
-        villageOrMunicipalityOrCorporation: { type: String, default: "" },
-        doorNoStreetOrRoad: { type: String, default: "" },
-        pinCode: { type: String, default: "" }
-    },
-    { _id: false }
-);
-
-const facilitiesAvailableSchema = new mongoose.Schema(
-    {
-        lift: { type: String, default: "" },
-        protectedWaterSupply: { type: String, default: "" },
-        undergroundSewerage: { type: String, default: "" },
-        carParking: { type: String, default: "" },
-        compoundWall: { type: String, default: "" },
-        pavementAroundBuilding: { type: String, default: "" }
-    },
-    { _id: false }
-);
-
-const flatSpecificationsSchema = new mongoose.Schema(
-    {
-        roof: { type: String, default: "" },
-        flooring: { type: String, default: "" },
-        doors: { type: String, default: "" },
-        windows: { type: String, default: "" },
-        fittings: { type: String, default: "" },
-        finishing: { type: String, default: "" }
-    },
-    { _id: false }
-);
-
-const houseTaxSchema = new mongoose.Schema(
-    {
-        houseTax: { type: String, default: "" },
-        assessmentNo: { type: String, default: "" },
-        taxPaidInNameOf: { type: String, default: "" },
-        taxAmount: { type: String, default: "" }
-    },
-    { _id: false }
-);
-
 const rateBreakupSchema = new mongoose.Schema(
     {
         buildingServices: { type: String, default: "" },
@@ -108,9 +61,6 @@ const rateBreakupSchema = new mongoose.Schema(
     },
     { _id: false }
 );
-
-
-
 const valuationSummarySchema = new mongoose.Schema(
     {
         marketValue: { type: String, default: "" },
@@ -121,13 +71,9 @@ const valuationSummarySchema = new mongoose.Schema(
     },
     { _id: false }
 );
-
-
-
-
 const apartmentBuildingSchema = new mongoose.Schema(
     {
-        
+
         numberOfFloors: { type: String, default: "" },
     },
     { _id: false }
@@ -166,7 +112,7 @@ const areaAndLocationDetailsSchema = new mongoose.Schema(
         residentialArea: { type: String, default: "" },
         commercialArea: { type: String, default: "" },
         industrialArea: { type: String, default: "" },
-       
+
     },
     { _id: false }
 );
@@ -305,7 +251,7 @@ const pdfDetailsSchema = new mongoose.Schema(
         presentValueQty: { type: String, default: "" },
         presentValueRate: { type: String, default: "" },
         presentValue: { type: String, default: "" },
-        
+
         // DETAILS OF VALUATION FIELDS
         wardrobes: { type: String, default: "" },
         wardrobesRate: { type: String, default: "" },
@@ -341,7 +287,7 @@ const pdfDetailsSchema = new mongoose.Schema(
         areaType: { type: String, default: "" },
         governanceType: { type: String, default: "" },
         governmentEnactments: { type: String, default: "" },
-       
+
 
         // LOCATION DETAILS FIELDS
         wardTaluka: { type: String, default: "" },
